@@ -10,7 +10,6 @@ file_name = '.leech'
 # TODO: Check if user is sudo
 # TODO: Fix MAC generation
 # TODO: Automatically agree to ICE portal Terms & Services
-# TODO: Remove boolean argument from CLI reset option
 # TODO: Improve file checking
 
 def get_mac():
@@ -65,7 +64,7 @@ def random_hex():
 
 
 @click.command()
-@click.option('--reset', default=False, help='Reset your MAC address back before the first run of Leech.')
+@click.option('--reset', is_flag=True, help='Reset your MAC address back before the first run of Leech.')
 def leech(reset):
     if not reset:
         mac = get_mac()
