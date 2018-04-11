@@ -6,10 +6,10 @@ import click
 file_name = '.leech'
 
 
-# TODO:
-# Wifi on?
-# Is sudo?!
-# Checksum?
+# TODO: Check Wifi
+# TODO: Check if user is sudo
+# TODO: Fix MAC generation
+# TODO: Automatically agree to ICE portal Terms & Services
 
 def get_mac():
     return subprocess.getstatusoutput(['ifconfig en0 | grep ether'])[1] \
