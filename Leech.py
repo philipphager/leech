@@ -67,7 +67,7 @@ def random_hex():
 def leech(reset):
     if not reset:
         mac = get_mac()
-        if save_file_exists():
+        if not save_file_exists():
             save(mac)
             print("Saved your current MAC address to disk. Use the --reset option to revert to it.")
 
