@@ -44,5 +44,8 @@ nosetests.xml
 coverage.xml
 *,cover
 
+# IDEA
+.idea/
+
 # Sensitive data
 .leech
