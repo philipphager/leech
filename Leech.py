@@ -10,6 +10,8 @@ file_name = '.leech'
 # TODO: Check if user is sudo
 # TODO: Fix MAC generation
 # TODO: Automatically agree to ICE portal Terms & Services
+# TODO: Remove boolean argument from CLI reset option
+# TODO: Improve file checking
 
 def get_mac():
     return subprocess.getstatusoutput(['ifconfig en0 | grep ether'])[1] \
