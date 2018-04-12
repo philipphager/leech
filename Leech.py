@@ -87,7 +87,7 @@ def leech(reset):
 
         if verified_mac == new_mac:
             print('Successfully randomized your MAC address.')
-            print('Disconnecting and reconnecting your WIFI')
+            print('Turning your WIFI on and off to reconnect to the network.')
             enable_wifi(False)
             enable_wifi(True)
         else:
