@@ -48,22 +48,9 @@ def save_file_exists():
 
 
 def randomize_mac():
-    address = ""
-    limit = 6
-
-    for i in range(1, limit + 1):
-        address += random_hex()
-
-        if i < limit:
-            address += ":"
-
-    return address
-
-
-def random_hex():
-    return Random().randrange(0, 255, 1) \
-        .to_bytes(1, 'big') \
-        .hex()
+    mac = [Random().randint(0, 255) for x in range(0, 6)]
+    mac[0] = (mac[0] & 0xfc) | 0x02
+    return ':'.join(['{0:02x}'.format(x) for x in mac])
 
 
 @click.command()
