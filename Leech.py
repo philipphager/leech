@@ -2,6 +2,7 @@ import subprocess
 from random import Random
 
 import click
+import os
 
 file_name = '.leech'
 
@@ -10,7 +11,6 @@ file_name = '.leech'
 # TODO: Check if user is sudo
 # TODO: Fix MAC generation
 # TODO: Automatically agree to ICE portal Terms & Services
-# TODO: Improve file checking
 # TODO: Set custom MAC address
 # TODO: Option to only show current IP address
 
@@ -44,11 +44,7 @@ def enable_wifi(is_enabled):
 
 
 def save_file_exists():
-    try:
-        with open(file_name, 'r'):
-            return True
-    except FileNotFoundError as e:
-        return False
+    return os.path.isfile(file_name)
 
 
 def randomize_mac():
