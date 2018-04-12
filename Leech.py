@@ -7,13 +7,6 @@ import os
 file_name = '.leech'
 
 
-# TODO: Check Wifi enabled
-# TODO: Check if user is sudo
-# TODO: Fix MAC generation
-# TODO: Automatically agree to ICE portal Terms & Services
-# TODO: Set custom MAC address
-# TODO: Option to only show current IP address
-
 def get_mac():
     return subprocess.getstatusoutput(['ifconfig en0 | grep ether'])[1] \
         .replace("ether ", "") \
