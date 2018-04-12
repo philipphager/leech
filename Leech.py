@@ -6,11 +6,13 @@ import click
 file_name = '.leech'
 
 
-# TODO: Check Wifi
+# TODO: Check Wifi enabled
 # TODO: Check if user is sudo
 # TODO: Fix MAC generation
 # TODO: Automatically agree to ICE portal Terms & Services
 # TODO: Improve file checking
+# TODO: Set custom MAC address
+# TODO: Option to only show current IP address
 
 def get_mac():
     return subprocess.getstatusoutput(['ifconfig en0 | grep ether'])[1] \
@@ -34,6 +36,11 @@ def save(address):
 def load():
     with open(file_name, 'r') as f:
         return f.readline()
+
+
+def enable_wifi(is_enabled):
+    status = 'on' if is_enabled else 'off'
+    return subprocess.getstatusoutput(['networksetup -setairportpower en0 ' + status])
 
 
 def save_file_exists():
@@ -80,6 +87,9 @@ def leech(reset):
 
         if verified_mac == new_mac:
             print('Successfully randomized your MAC address.')
+            print('Disconnecting and reconnecting your WIFI')
+            enable_wifi(False)
+            enable_wifi(True)
         else:
             print('Something went wrong, make sure you use are sudo and have WIFI turned on.')
             print(f'Current mac address: {verified_mac}')
