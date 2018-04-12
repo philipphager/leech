@@ -1,8 +1,8 @@
 # Leech
-A simple OSX CLI tool that changes your MAC address to a new random address.
+A simple OSX CLI tool to change your MAC address temporarily to a new random address.
 
 ## Usage
-As it changes ifconfig settings, you need to run the script with sudo:
+As leech uses ifconfig settings, you need to run the script with sudo:
 ```
 sudo python Leech.py
 ```
