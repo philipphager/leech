@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "leech"
+version = "0.1.1"
+description = "A simple OSX CLI tool to change your MAC address temporarily to a new random address."
+authors = ["Philipp Hager <philipp.konstantin.hager@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+click = "^7.0"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+leech = "leech:leech"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
