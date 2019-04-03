@@ -73,7 +73,3 @@ def leech(reset):
         mac = load()
         set_mac(mac)
         print(f'Resetting to your original MAC address: {mac}')
-
-
-if __name__ == '__main__':
-    leech()
